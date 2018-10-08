@@ -73,6 +73,8 @@ function createRock(x) {
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
+ 
+ 
   function moveRock() {
     // implement me!
     // (use the comments below to guide you!)
@@ -102,8 +104,10 @@ function createRock(x) {
 
   // We should kick of the animation of the rock around here
   window.requestAnimationFrame(moveRock)
+  
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
+  
   ROCKS.push(rock)
 
   // Finally, return the rock element you've created
@@ -116,6 +120,7 @@ function createRock(x) {
  * and removing the `moveDodger` event listener.
  * Finally, alert "YOU LOSE!" to the player.
  */
+
 function endGame() {
   clearInterval(gameInterval)
   for (var i = 0; i < ROCKS.length; i++) {
@@ -149,6 +154,7 @@ function moveDodgerLeft() {
   window.requestAnimationFrame(moveLeft)
   }
 
+
 function moveDodgerRight() {
   var leftNumbers = dodger.style.left.replace('px', '')
   var left = parseInt(leftNumbers, 10)
@@ -164,6 +170,7 @@ function moveDodgerRight() {
  * @param {string} p The position property
  * @returns {number} The position as an integer (without 'px')
  */
+
 function positionToInteger(p) {
   return parseInt(p.split('px')[0]) || 0
 }
